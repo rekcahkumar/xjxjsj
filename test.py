@@ -261,7 +261,7 @@ class Striker(Process):
 
     def run(self):
 
-        if DEBUG:
+        
             
 
         while self.runnable:
