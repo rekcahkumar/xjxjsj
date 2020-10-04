@@ -288,14 +288,15 @@ class Striker(Process):
                     try:
                       conn_req.request(method.upper(), url, None, headers)
                     except:
-                        print ("Website Down!!!!")
                         pass
                   
 
                 for conn_resp in self.socks:
-
-                    resp = conn_resp.getresponse()
-                    self.incCounter()
+                    try:
+                      resp = conn_resp.getresponse()
+                      self.incCounter()
+                    except:
+                      pass
 
                 self.closeConnections()
 
