@@ -115,11 +115,9 @@ class GoldenEye(object):
     def fire(self):
 
         self.printHeader()
-        print("Hitting webserver in mode '{0}' with {1} workers running {2} connections each. Hit CTRL+C to cancel.".format(self.method, self.nr_workers, self.nr_sockets))
+        print("")
 
-        if DEBUG:
-            print("Starting {0} concurrent workers".format(self.nr_workers))
-
+        
         # Start workers
         for i in range(int(self.nr_workers)):
 
@@ -143,11 +141,9 @@ class GoldenEye(object):
 
         try:
             if self.counter[0] > 0 or self.counter[1] > 0:
-                if az == "up":
+               
                     print("Server Down or Ignoring My Requests....!")
-                    print("Server Down or Ignoring My Requests....!")
-                    print("Server Down or Ignoring My Requests....!")
-                    az = "down"           
+                     
                 if self.counter[0] > 0 and self.counter[1] > 0 and self.last_counter[0] == self.counter[0] and self.counter[1] > self.last_counter[1]:
                     print("Server may be DOWN!!!")
 
