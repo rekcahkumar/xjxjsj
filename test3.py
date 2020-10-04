@@ -285,8 +285,12 @@ class Striker(Process):
                     (url, headers) = self.createPayload()
 
                     method = random.choice([METHOD_GET, METHOD_POST]) if self.method == METHOD_RAND else self.method
-
-                    conn_req.request(method.upper(), url, None, headers)
+                    try:
+                      conn_req.request(method.upper(), url, None, headers)
+                    except:
+                        print ("Website Down!!!!")
+                        pass
+                  
 
                 for conn_resp in self.socks:
 
