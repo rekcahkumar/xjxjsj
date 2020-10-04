@@ -4,7 +4,7 @@ import urllib.parse, ssl
 import sys, getopt, random, time, os
 import http.client
 HTTPCLIENT = http.client
-az = 12
+az = "up"
 ####
 # Config
 ####
@@ -143,11 +143,11 @@ class GoldenEye(object):
 
         try:
             if self.counter[0] > 0 or self.counter[1] > 0:
-                if az == 12:
+                if az == "up":
                     print("Server Down or Ignoring My Requests....!")
                     print("Server Down or Ignoring My Requests....!")
                     print("Server Down or Ignoring My Requests....!")
-                    az = 13                
+                    az = "down"           
                 if self.counter[0] > 0 and self.counter[1] > 0 and self.last_counter[0] == self.counter[0] and self.counter[1] > self.last_counter[1]:
                     print("Server may be DOWN!!!")
 
