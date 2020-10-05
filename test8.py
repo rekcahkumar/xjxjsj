@@ -20,7 +20,7 @@ METHOD_RAND = 'random'
 
 JOIN_TIMEOUT = 1.0
 
-DEFAULT_WORKERS = 10
+DEFAULT_WORKERS = 100
 DEFAULT_SOCKETS = 500
 
 
@@ -134,7 +134,9 @@ class GoldenEye(object):
                 pass
 
         if DEBUG:
-            print("Initiating monitor")
+            print("Current Status")
+            print ("")
+            print("Server UP")
         self.monitor()
 
     def stats(self):
